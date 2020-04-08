@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.12"
+}
+
 locals {
   overrride = {
     Application       = var.application != "" ? var.application : join("", [lookup(var.tags, "application", ""), lookup(var.tags, "Application", "")]),
