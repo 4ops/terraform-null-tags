@@ -33,7 +33,7 @@ validate: fmt
 test: validate
 	@export NAME=$${NAME:-simple}
 	@terraform init
-	@terraform plan -out=plan.tfplan -var-file=test-vars/$${TEST_VARS}.tfvars
+	@terraform plan -out=plan.tfplan -var-file=test-vars/$${NAME}.tfvars
 	@terraform apply -refresh=false plan.tfplan
 	@rm -f plan.tfplan
 
